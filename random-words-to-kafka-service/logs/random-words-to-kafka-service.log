@@ -1,0 +1,685 @@
+2021-10-06 17:39:17 [main] [,] INFO   c.c.kafka.service.Application - Starting Application using Java 11.0.11 on EdwardLegaspi.local with PID 56384 (/Users/czetsuya/Project/Experimental/kafka-client/random-words-to-kafka-service/target/classes started by czetsuya in /Users/czetsuya/Project/Experimental/kafka-client)
+2021-10-06 17:39:17 [main] [,] INFO   c.c.kafka.service.Application - No active profile set, falling back to default profiles: default
+2021-10-06 17:39:18 [main] [,] WARN   o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.aop.config.internalAutoProxyCreator': Initialization of bean failed; nested exception is java.lang.NoClassDefFoundError: org/aspectj/lang/annotation/Pointcut
+2021-10-06 17:39:18 [main] [,] INFO   o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-10-06 17:39:18 [main] [,] ERROR  o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.aop.config.internalAutoProxyCreator': Initialization of bean failed; nested exception is java.lang.NoClassDefFoundError: org/aspectj/lang/annotation/Pointcut
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:610)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:258)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:64)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.czetsuyatech.kafka.service.Application.main(Application.java:20)
+Caused by: java.lang.NoClassDefFoundError: org/aspectj/lang/annotation/Pointcut
+	at org.springframework.aop.aspectj.annotation.AbstractAspectJAdvisorFactory.<clinit>(AbstractAspectJAdvisorFactory.java:62)
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.initBeanFactory(AnnotationAwareAspectJAutoProxyCreator.java:82)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.setBeanFactory(AbstractAdvisorAutoProxyCreator.java:65)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeAwareMethods(AbstractAutowireCapableBeanFactory.java:1808)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1773)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	... 15 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.aspectj.lang.annotation.Pointcut
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	... 21 common frames omitted
+2021-10-06 17:42:24 [main] [,] INFO   c.c.kafka.service.Application - Starting Application using Java 11.0.11 on EdwardLegaspi.local with PID 56426 (/Users/czetsuya/Project/Experimental/kafka-client/random-words-to-kafka-service/target/classes started by czetsuya in /Users/czetsuya/Project/Experimental/kafka-client)
+2021-10-06 17:42:24 [main] [,] INFO   c.c.kafka.service.Application - No active profile set, falling back to default profiles: default
+2021-10-06 17:42:25 [main] [,] INFO   o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 127000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2021-10-06 17:42:25 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka version: 2.7.1
+2021-10-06 17:42:25 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 61dbce85d0d41457
+2021-10-06 17:42:25 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1633513345061
+2021-10-06 17:42:25 [main] [,] INFO   o.s.b.w.e.netty.NettyWebServer - Netty started on port 8181
+2021-10-06 17:42:25 [main] [,] INFO   c.c.kafka.service.Application - Started Application in 1.696 seconds (JVM running for 2.296)
+2021-10-06 17:42:35 [main] [,] INFO   c.c.k.admin.client.KafkaAdminClient - Creating 1 topics(s), attempt 0
+2021-10-06 17:42:35 [main] [,] INFO   c.c.k.admin.client.KafkaAdminClient - Create topic result [KafkaFuture{value=null,exception=null,done=false}]
+2021-10-06 17:42:35 [main] [,] INFO   c.c.k.admin.client.KafkaAdminClient - Reading kafka topic [random-words-topic], attempt 0
+2021-10-06 17:42:42 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2021-10-06 17:42:42 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2021-10-06 17:42:42 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2021-10-06 17:42:42 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2021-10-06 17:42:55 [main] [,] INFO   c.c.kafka.service.Application - Starting Application using Java 11.0.11 on EdwardLegaspi.local with PID 56429 (/Users/czetsuya/Project/Experimental/kafka-client/random-words-to-kafka-service/target/classes started by czetsuya in /Users/czetsuya/Project/Experimental/kafka-client)
+2021-10-06 17:42:55 [main] [,] INFO   c.c.kafka.service.Application - No active profile set, falling back to default profiles: default
+2021-10-06 17:42:55 [main] [,] INFO   o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 127000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2021-10-06 17:42:55 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka version: 2.7.1
+2021-10-06 17:42:55 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 61dbce85d0d41457
+2021-10-06 17:42:55 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1633513375953
+2021-10-06 17:42:56 [main] [,] INFO   o.s.b.w.e.netty.NettyWebServer - Netty started on port 8181
+2021-10-06 17:42:56 [main] [,] INFO   c.c.kafka.service.Application - Started Application in 1.827 seconds (JVM running for 2.496)
+2021-10-06 17:43:34 [main] [,] INFO   c.c.k.admin.client.KafkaAdminClient - Creating 1 topics(s), attempt 0
+2021-10-06 17:43:55 [main] [,] INFO   c.c.k.admin.client.KafkaAdminClient - Create topic result [KafkaFuture{value=null,exception=null,done=false}]
+2021-10-06 17:44:08 [main] [,] INFO   c.c.k.admin.client.KafkaAdminClient - Reading kafka topic [random-words-topic], attempt 0
+2021-10-06 17:44:16 [main] [,] INFO   c.c.k.s.i.i.KafkaStreamInitializer - Topics with name random-words-topic is ready for operations!
+2021-10-06 17:46:53 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2021-10-06 17:46:53 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2021-10-06 17:46:53 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2021-10-06 17:46:53 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2021-10-06 19:00:08 [main] [,] INFO   c.c.kafka.service.Application - Starting Application using Java 11.0.11 on EdwardLegaspi.local with PID 57005 (/Users/czetsuya/Project/Experimental/kafka-client/random-words-to-kafka-service/target/classes started by czetsuya in /Users/czetsuya/Project/Experimental/kafka-client)
+2021-10-06 19:00:08 [main] [,] INFO   c.c.kafka.service.Application - No active profile set, falling back to default profiles: default
+2021-10-06 19:00:09 [main] [,] INFO   o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 127000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2021-10-06 19:00:09 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka version: 2.7.1
+2021-10-06 19:00:09 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 61dbce85d0d41457
+2021-10-06 19:00:09 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1633518009687
+2021-10-06 19:00:09 [kafka-admin-client-thread | adminclient-1] [,] WARN   o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (localhost/127.0.0.1:39092) could not be established. Broker may not be available.
+2021-10-06 19:00:10 [main] [,] INFO   o.s.b.w.e.netty.NettyWebServer - Netty started on port 8181
+2021-10-06 19:00:10 [main] [,] INFO   c.c.kafka.service.Application - Started Application in 1.897 seconds (JVM running for 2.59)
+2021-10-06 19:00:18 [main] [,] INFO   c.c.k.admin.client.KafkaAdminClient - Creating 1 topics(s), attempt 0
+2021-10-06 19:00:18 [main] [,] INFO   c.c.k.admin.client.KafkaAdminClient - Create topic result [KafkaFuture{value=null,exception=null,done=false}]
+2021-10-06 19:00:18 [main] [,] INFO   c.c.k.admin.client.KafkaAdminClient - Reading kafka topic [random-words-topic], attempt 0
+2021-10-06 19:00:19 [main] [,] INFO   c.c.k.s.i.i.KafkaStreamInitializer - Topics with name random-words-topic is ready for operations!
+2021-10-06 19:01:21 [SpringApplicationShutdownHook] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Closing kafka producer!
+2021-10-06 19:01:21 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2021-10-06 19:01:21 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2021-10-06 19:01:21 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2021-10-06 19:01:21 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2021-10-06 19:02:06 [main] [,] INFO   c.c.kafka.service.Application - Starting Application using Java 11.0.11 on EdwardLegaspi.local with PID 57031 (/Users/czetsuya/Project/Experimental/kafka-client/random-words-to-kafka-service/target/classes started by czetsuya in /Users/czetsuya/Project/Experimental/kafka-client)
+2021-10-06 19:02:06 [main] [,] INFO   c.c.kafka.service.Application - No active profile set, falling back to default profiles: default
+2021-10-06 19:02:07 [main] [,] INFO   o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 127000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2021-10-06 19:02:07 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka version: 2.7.1
+2021-10-06 19:02:07 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 61dbce85d0d41457
+2021-10-06 19:02:07 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1633518127582
+2021-10-06 19:02:07 [main] [,] WARN   o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'application': Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.czetsuyatech.kafka.service.runner.StreamRunner' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2021-10-06 19:02:07 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2021-10-06 19:02:07 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.k.c.a.i.AdminMetadataManager - [AdminClient clientId=adminclient-1] Metadata update failed
+org.apache.kafka.common.errors.TimeoutException: Call(callName=fetchMetadata, deadlineMs=1633518157587, tries=1, nextAllowedTryMs=-9223372036854775709) timed out at 9223372036854775807 after 1 attempt(s)
+Caused by: org.apache.kafka.common.errors.TimeoutException: Timed out waiting to send the call. Call: fetchMetadata
+2021-10-06 19:02:07 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2021-10-06 19:02:07 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2021-10-06 19:02:07 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2021-10-06 19:02:07 [main] [,] INFO   o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-10-06 19:02:07 [main] [,] ERROR  o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.czetsuyatech.kafka.service.Application required a bean of type 'com.czetsuyatech.kafka.service.runner.StreamRunner' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.czetsuyatech.kafka.service.runner.StreamRunner' in your configuration.
+
+2021-10-06 19:02:50 [main] [,] INFO   c.c.kafka.service.Application - Starting Application using Java 11.0.11 on EdwardLegaspi.local with PID 57040 (/Users/czetsuya/Project/Experimental/kafka-client/random-words-to-kafka-service/target/classes started by czetsuya in /Users/czetsuya/Project/Experimental/kafka-client)
+2021-10-06 19:02:50 [main] [,] INFO   c.c.kafka.service.Application - No active profile set, falling back to default profiles: default
+2021-10-06 19:02:51 [main] [,] INFO   o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 127000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2021-10-06 19:02:51 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka version: 2.7.1
+2021-10-06 19:02:51 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 61dbce85d0d41457
+2021-10-06 19:02:51 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1633518171138
+2021-10-06 19:02:51 [main] [,] INFO   o.s.b.w.e.netty.NettyWebServer - Netty started on port 8181
+2021-10-06 19:02:51 [main] [,] INFO   c.c.kafka.service.Application - Started Application in 1.509 seconds (JVM running for 1.995)
+2021-10-06 19:02:51 [main] [,] INFO   c.c.k.admin.client.KafkaAdminClient - Creating 1 topics(s), attempt 0
+2021-10-06 19:02:51 [main] [,] INFO   c.c.k.admin.client.KafkaAdminClient - Create topic result [KafkaFuture{value=null,exception=null,done=false}]
+2021-10-06 19:02:51 [main] [,] INFO   c.c.k.admin.client.KafkaAdminClient - Reading kafka topic [random-words-topic], attempt 0
+2021-10-06 19:02:51 [main] [,] INFO   c.c.k.s.i.i.KafkaStreamInitializer - Topics with name random-words-topic is ready for operations!
+2021-10-06 19:02:51 [main] [,] INFO   o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-10-06 19:02:51 [main] [,] ERROR  o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:794)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:345)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.czetsuyatech.kafka.service.Application.main(Application.java:24)
+Caused by: java.lang.NullPointerException: null
+	at com.czetsuyatech.kafka.service.runner.impl.MockKafkaStreamRunner.start(MockKafkaStreamRunner.java:35)
+	at com.czetsuyatech.kafka.service.Application.run(Application.java:30)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:791)
+	... 5 common frames omitted
+2021-10-06 19:02:51 [main] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Closing kafka producer!
+2021-10-06 19:02:51 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2021-10-06 19:02:51 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2021-10-06 19:02:51 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2021-10-06 19:02:51 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2021-10-06 19:04:42 [main] [,] INFO   c.c.kafka.service.Application - Starting Application using Java 11.0.11 on EdwardLegaspi.local with PID 57067 (/Users/czetsuya/Project/Experimental/kafka-client/random-words-to-kafka-service/target/classes started by czetsuya in /Users/czetsuya/Project/Experimental/kafka-client)
+2021-10-06 19:04:42 [main] [,] INFO   c.c.kafka.service.Application - No active profile set, falling back to default profiles: default
+2021-10-06 19:04:42 [main] [,] INFO   o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 127000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2021-10-06 19:04:42 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka version: 2.7.1
+2021-10-06 19:04:42 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 61dbce85d0d41457
+2021-10-06 19:04:42 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1633518282895
+2021-10-06 19:04:42 [kafka-admin-client-thread | adminclient-1] [,] WARN   o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (localhost/127.0.0.1:39092) could not be established. Broker may not be available.
+2021-10-06 19:04:43 [main] [,] INFO   o.s.b.w.e.netty.NettyWebServer - Netty started on port 8181
+2021-10-06 19:04:43 [main] [,] INFO   c.c.kafka.service.Application - Started Application in 1.64 seconds (JVM running for 2.167)
+2021-10-06 19:04:43 [main] [,] INFO   c.c.k.admin.client.KafkaAdminClient - Creating 1 topics(s), attempt 0
+2021-10-06 19:04:43 [main] [,] INFO   c.c.k.admin.client.KafkaAdminClient - Create topic result [KafkaFuture{value=null,exception=null,done=false}]
+2021-10-06 19:04:43 [main] [,] INFO   c.c.k.admin.client.KafkaAdminClient - Reading kafka topic [random-words-topic], attempt 0
+2021-10-06 19:04:43 [main] [,] INFO   c.c.k.s.i.i.KafkaStreamInitializer - Topics with name random-words-topic is ready for operations!
+2021-10-06 19:04:43 [main] [,] INFO   c.c.k.s.r.impl.MockKafkaStreamRunner - Starting mock filtering random words streams [Java, Microservices, Kafka, Spring]
+2021-10-06 19:04:43 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Java sending to kafka topic random-words-topic
+2021-10-06 19:04:43 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": -1686927314512098456, "id": -7674770796908508022, "word": "Java", "createdAt": 1633518283610}' to topic='random-words-topic'
+2021-10-06 19:04:43 [pool-3-thread-1] [,] INFO   o.a.k.c.producer.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	batch.size = 1638400
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	internal.auto.downgrade.txn.commit = true
+	key.serializer = class org.apache.kafka.common.serialization.LongSerializer
+	linger.ms = 5
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 60000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 127000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class io.confluent.kafka.serializers.KafkaAvroSerializer
+
+2021-10-06 19:04:43 [pool-3-thread-1] [,] INFO   i.c.k.s.KafkaAvroSerializerConfig - KafkaAvroSerializerConfig values: 
+	auto.register.schemas = true
+	avro.reflection.allow.null = false
+	avro.remove.java.properties = false
+	avro.use.logical.type.converters = false
+	basic.auth.credentials.source = URL
+	basic.auth.user.info = [hidden]
+	bearer.auth.credentials.source = STATIC_TOKEN
+	bearer.auth.token = [hidden]
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+	latest.compatibility.strict = true
+	max.schemas.per.subject = 1000
+	proxy.host = 
+	proxy.port = -1
+	schema.reflection = false
+	schema.registry.basic.auth.user.info = [hidden]
+	schema.registry.ssl.cipher.suites = null
+	schema.registry.ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	schema.registry.ssl.endpoint.identification.algorithm = https
+	schema.registry.ssl.engine.factory.class = null
+	schema.registry.ssl.key.password = null
+	schema.registry.ssl.keymanager.algorithm = SunX509
+	schema.registry.ssl.keystore.certificate.chain = null
+	schema.registry.ssl.keystore.key = null
+	schema.registry.ssl.keystore.location = null
+	schema.registry.ssl.keystore.password = null
+	schema.registry.ssl.keystore.type = JKS
+	schema.registry.ssl.protocol = TLSv1.3
+	schema.registry.ssl.provider = null
+	schema.registry.ssl.secure.random.implementation = null
+	schema.registry.ssl.trustmanager.algorithm = PKIX
+	schema.registry.ssl.truststore.certificates = null
+	schema.registry.ssl.truststore.location = null
+	schema.registry.ssl.truststore.password = null
+	schema.registry.ssl.truststore.type = JKS
+	schema.registry.url = [http://localhost:8081]
+	use.latest.version = false
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+
+2021-10-06 19:04:43 [pool-3-thread-1] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka version: 2.7.1
+2021-10-06 19:04:43 [pool-3-thread-1] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 61dbce85d0d41457
+2021-10-06 19:04:43 [pool-3-thread-1] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1633518283698
+2021-10-06 19:04:43 [kafka-producer-network-thread | producer-1] [,] WARN   o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node -3 (localhost/127.0.0.1:39092) could not be established. Broker may not be available.
+2021-10-06 19:04:43 [kafka-producer-network-thread | producer-1] [,] WARN   o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Bootstrap broker localhost:39092 (id: -3 rack: null) disconnected
+2021-10-06 19:04:43 [kafka-producer-network-thread | producer-1] [,] INFO   org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Cluster ID: 2sGRDK1vSDGMXZfpemE_AQ
+2021-10-06 19:04:54 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Kafka sending to kafka topic random-words-topic
+2021-10-06 19:04:54 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": 3331509883968428881, "id": -2973776881051906275, "word": "Kafka", "createdAt": 1633518294694}' to topic='random-words-topic'
+2021-10-06 19:05:04 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Kafka sending to kafka topic random-words-topic
+2021-10-06 19:05:04 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": -1333968191195513586, "id": 673790869023774108, "word": "Kafka", "createdAt": 1633518304700}' to topic='random-words-topic'
+2021-10-06 19:05:14 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Spring sending to kafka topic random-words-topic
+2021-10-06 19:05:14 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": -708939078766183944, "id": 141136002018832737, "word": "Spring", "createdAt": 1633518314706}' to topic='random-words-topic'
+2021-10-06 19:05:24 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Java sending to kafka topic random-words-topic
+2021-10-06 19:05:24 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": 5381707049660452867, "id": -7810453179295911565, "word": "Java", "createdAt": 1633518324711}' to topic='random-words-topic'
+2021-10-06 19:05:34 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Kafka sending to kafka topic random-words-topic
+2021-10-06 19:05:34 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": 7632667990530907299, "id": 1459304173859029466, "word": "Kafka", "createdAt": 1633518334717}' to topic='random-words-topic'
+2021-10-06 19:05:44 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Microservices sending to kafka topic random-words-topic
+2021-10-06 19:05:44 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": -8398554047852665256, "id": -1397985124389436710, "word": "Microservices", "createdAt": 1633518344723}' to topic='random-words-topic'
+2021-10-06 19:05:54 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Spring sending to kafka topic random-words-topic
+2021-10-06 19:05:54 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": 7486166174215291003, "id": -952997176341626049, "word": "Spring", "createdAt": 1633518354727}' to topic='random-words-topic'
+2021-10-06 19:06:04 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Microservices sending to kafka topic random-words-topic
+2021-10-06 19:06:04 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": 8348433640509132008, "id": -635517910651887994, "word": "Microservices", "createdAt": 1633518364730}' to topic='random-words-topic'
+2021-10-06 19:06:14 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Java sending to kafka topic random-words-topic
+2021-10-06 19:06:14 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": -1372765471211028321, "id": 889356338148560987, "word": "Java", "createdAt": 1633518374734}' to topic='random-words-topic'
+2021-10-06 19:06:24 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Microservices sending to kafka topic random-words-topic
+2021-10-06 19:06:24 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": -2596071828851887394, "id": -2361101086539842377, "word": "Microservices", "createdAt": 1633518384741}' to topic='random-words-topic'
+2021-10-06 19:06:34 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Spring sending to kafka topic random-words-topic
+2021-10-06 19:06:34 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": 6408993469382059794, "id": 2882771709071820382, "word": "Spring", "createdAt": 1633518394744}' to topic='random-words-topic'
+2021-10-06 19:06:44 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Java sending to kafka topic random-words-topic
+2021-10-06 19:06:44 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": 145399293750979238, "id": -4320504641134278972, "word": "Java", "createdAt": 1633518404745}' to topic='random-words-topic'
+2021-10-06 19:06:54 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Spring sending to kafka topic random-words-topic
+2021-10-06 19:06:54 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": -5874153881700761486, "id": -6377329293182248814, "word": "Spring", "createdAt": 1633518414747}' to topic='random-words-topic'
+2021-10-06 19:07:04 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Spring sending to kafka topic random-words-topic
+2021-10-06 19:07:04 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": -1156343157614471980, "id": 570164373638856908, "word": "Spring", "createdAt": 1633518424753}' to topic='random-words-topic'
+2021-10-06 19:07:14 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Java sending to kafka topic random-words-topic
+2021-10-06 19:07:14 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": 4326043380906060609, "id": -3441671967630600463, "word": "Java", "createdAt": 1633518434756}' to topic='random-words-topic'
+2021-10-06 19:07:24 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Java sending to kafka topic random-words-topic
+2021-10-06 19:07:24 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": 8458568243073662095, "id": -291339873779100435, "word": "Java", "createdAt": 1633518444760}' to topic='random-words-topic'
+2021-10-06 19:07:34 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Spring sending to kafka topic random-words-topic
+2021-10-06 19:07:34 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": -5352277783453796917, "id": 5024126535864430972, "word": "Spring", "createdAt": 1633518454764}' to topic='random-words-topic'
+2021-10-06 19:07:44 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Spring sending to kafka topic random-words-topic
+2021-10-06 19:07:44 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": 6581596959789870702, "id": 3294285888570594460, "word": "Spring", "createdAt": 1633518464766}' to topic='random-words-topic'
+2021-10-06 19:07:54 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Java sending to kafka topic random-words-topic
+2021-10-06 19:07:54 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": 2399012659323578852, "id": 8946873606466839607, "word": "Java", "createdAt": 1633518474772}' to topic='random-words-topic'
+2021-10-06 19:08:04 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Microservices sending to kafka topic random-words-topic
+2021-10-06 19:08:04 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": -5631285273310396931, "id": 7695599543563071014, "word": "Microservices", "createdAt": 1633518484777}' to topic='random-words-topic'
+2021-10-06 19:08:14 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Microservices sending to kafka topic random-words-topic
+2021-10-06 19:08:14 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": -8933474478300662761, "id": 3671153510348704824, "word": "Microservices", "createdAt": 1633518494782}' to topic='random-words-topic'
+2021-10-06 19:08:24 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Kafka sending to kafka topic random-words-topic
+2021-10-06 19:08:24 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": -4810966630084062403, "id": -3377161358111496358, "word": "Kafka", "createdAt": 1633518504788}' to topic='random-words-topic'
+2021-10-06 19:08:34 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Java sending to kafka topic random-words-topic
+2021-10-06 19:08:34 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": -8714874124884298749, "id": 6421584106987437106, "word": "Java", "createdAt": 1633518514794}' to topic='random-words-topic'
+2021-10-06 19:08:44 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Microservices sending to kafka topic random-words-topic
+2021-10-06 19:08:44 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": -6756261886189418282, "id": -6778985115143046175, "word": "Microservices", "createdAt": 1633518524798}' to topic='random-words-topic'
+2021-10-06 19:08:54 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Java sending to kafka topic random-words-topic
+2021-10-06 19:08:54 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": -1687976318777866768, "id": 799760330635251544, "word": "Java", "createdAt": 1633518534802}' to topic='random-words-topic'
+2021-10-06 19:09:04 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Java sending to kafka topic random-words-topic
+2021-10-06 19:09:04 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": -5866029246043444006, "id": 3438076614698898666, "word": "Java", "createdAt": 1633518544804}' to topic='random-words-topic'
+2021-10-06 19:09:14 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Java sending to kafka topic random-words-topic
+2021-10-06 19:09:14 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": 3572909697768720870, "id": 6486898087723107225, "word": "Java", "createdAt": 1633518554811}' to topic='random-words-topic'
+2021-10-06 19:09:24 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Kafka sending to kafka topic random-words-topic
+2021-10-06 19:09:24 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": -2486138422555449011, "id": 8558591253268939002, "word": "Kafka", "createdAt": 1633518564816}' to topic='random-words-topic'
+2021-10-06 19:09:24 [kafka-producer-network-thread | producer-1] [,] WARN   o.a.k.c.producer.internals.Sender - [Producer clientId=producer-1] Got error produce response with correlation id 32 on topic-partition random-words-topic-0, retrying (4 attempts left). Error: NOT_LEADER_OR_FOLLOWER
+2021-10-06 19:09:24 [kafka-producer-network-thread | producer-1] [,] WARN   o.a.k.c.producer.internals.Sender - [Producer clientId=producer-1] Received invalid metadata error in produce request on partition random-words-topic-0 due to org.apache.kafka.common.errors.NotLeaderOrFollowerException: For requests intended only for the leader, this error indicates that the broker is not the current leader. For requests intended for any replica, this error indicates that the broker is not a replica of the topic partition.. Going to request metadata update now
+2021-10-06 19:09:34 [pool-3-thread-1] [,] INFO   c.c.k.s.l.RandomWordsKafkaStatusListener - Received status text Microservices sending to kafka topic random-words-topic
+2021-10-06 19:09:34 [pool-3-thread-1] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Sending message='{"userId": -2861581410599394608, "id": 1472641034805928055, "word": "Microservices", "createdAt": 1633518574819}' to topic='random-words-topic'
+2021-10-06 19:09:42 [SpringApplicationShutdownHook] [,] INFO   c.c.k.p.c.c.c.k.p.s.i.RandomWordKafkaProducerImpl - Closing kafka producer!
+2021-10-06 19:09:42 [SpringApplicationShutdownHook] [,] INFO   o.a.k.clients.producer.KafkaProducer - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2021-10-06 19:09:42 [SpringApplicationShutdownHook] [,] INFO   o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2021-10-06 19:09:42 [SpringApplicationShutdownHook] [,] INFO   o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2021-10-06 19:09:42 [SpringApplicationShutdownHook] [,] INFO   o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2021-10-06 19:09:42 [SpringApplicationShutdownHook] [,] INFO   o.a.kafka.common.utils.AppInfoParser - App info kafka.producer for producer-1 unregistered
+2021-10-06 19:09:42 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2021-10-06 19:09:42 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2021-10-06 19:09:42 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2021-10-06 19:09:42 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Metrics reporters closed

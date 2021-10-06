@@ -1,0 +1,5 @@
+com/czetsuyatech/kafka/admin/config/KafkaConsumerConfigData.class
+com/czetsuyatech/kafka/admin/config/KafkaConfigData.class
+com/czetsuyatech/kafka/admin/config/RandomWordsToKafkaConfigData.class
+com/czetsuyatech/kafka/admin/config/KafkaProducerConfigData.class
+com/czetsuyatech/kafka/admin/config/RetryConfigData.class
