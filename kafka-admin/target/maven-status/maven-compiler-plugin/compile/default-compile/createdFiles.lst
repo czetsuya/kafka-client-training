@@ -1,5 +1,0 @@
-com/czetsuyatech/kafka/admin/config/KafkaAdminConfig.class
-com/czetsuyatech/kafka/admin/config/RetryConfig.class
-com/czetsuyatech/kafka/admin/exception/KafkaClientException.class
-com/czetsuyatech/kafka/admin/config/WebClientConfig.class
-com/czetsuyatech/kafka/admin/client/KafkaAdminClient.class

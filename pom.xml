@@ -23,6 +23,7 @@
     <module>random-words-to-kafka-service</module>
     <module>kafka-admin</module>
     <module>kafka-model</module>
+    <module>kafka-to-console-service</module>
   </modules>
 
   <properties>
