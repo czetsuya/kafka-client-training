@@ -20,7 +20,7 @@
     <module>kafka-producer</module>
     <module>kafka-config</module>
     <module>kafka-consumer</module>
-    <module>random-words-to-kafka-service</module>
+    <module>random-temp-to-kafka-service</module>
     <module>kafka-admin</module>
     <module>kafka-model</module>
     <module>kafka-to-console-service</module>

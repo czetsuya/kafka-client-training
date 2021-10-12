@@ -2,8 +2,9 @@ package com.czetsuyatech.kafka.service.consumer.impl;
 
 import com.czetsuyatech.kafka.admin.client.KafkaAdminClient;
 import com.czetsuyatech.kafka.admin.config.KafkaConfigData;
-import com.czetsuyatech.kafka.avro.model.RandomWordAvroModel;
+import com.czetsuyatech.kafka.avro.model.RandomTempAvroModel;
 import com.czetsuyatech.kafka.service.consumer.KafkaConsumer;
+import com.czetsuyatech.kafka.service.transformer.AvroToDtoTransformer;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,20 +18,23 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 
 @Service
-public class RandomWordKafkaConsumer implements KafkaConsumer<Long, RandomWordAvroModel> {
+public class RandomTempKafkaConsumer implements KafkaConsumer<Long, RandomTempAvroModel> {
 
-  private static final Logger LOG = LoggerFactory.getLogger(RandomWordKafkaConsumer.class);
+  private static final Logger LOG = LoggerFactory.getLogger(RandomTempKafkaConsumer.class);
 
   private final KafkaListenerEndpointRegistry kafkaListenerEndpointRegistry;
   private final KafkaAdminClient kafkaAdminClient;
   private final KafkaConfigData kafkaConfigData;
+  private final AvroToDtoTransformer transformer;
 
-  public RandomWordKafkaConsumer(KafkaListenerEndpointRegistry listenerEndpointRegistry,
+  public RandomTempKafkaConsumer(KafkaListenerEndpointRegistry listenerEndpointRegistry,
       KafkaAdminClient adminClient,
-      KafkaConfigData configData) {
+      KafkaConfigData configData,
+      AvroToDtoTransformer transformer) {
     this.kafkaListenerEndpointRegistry = listenerEndpointRegistry;
     this.kafkaAdminClient = adminClient;
     this.kafkaConfigData = configData;
+    this.transformer = transformer;
   }
 
   @EventListener
@@ -43,7 +47,7 @@ public class RandomWordKafkaConsumer implements KafkaConsumer<Long, RandomWordAv
 
   @Override
   @KafkaListener(id = "randomWordsTopicListener", topics = "${kafka-config.topic-name}")
-  public void receive(@Payload List<RandomWordAvroModel> messages,
+  public void receive(@Payload List<RandomTempAvroModel> messages,
       @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) List<Long> keys,
       @Header(KafkaHeaders.RECEIVED_PARTITION_ID) List<Integer> partitions,
       @Header(KafkaHeaders.OFFSET) List<Long> offsets) {
@@ -54,6 +58,8 @@ public class RandomWordKafkaConsumer implements KafkaConsumer<Long, RandomWordAv
         partitions.toString(),
         offsets.toString(),
         Thread.currentThread().getId());
+
+    LOG.info("messages received={}", transformer.getTempModels(messages));
   }
 }
 

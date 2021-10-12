@@ -5,9 +5,9 @@ kafka-config:
   bootstrap-servers: localhost:19092, localhost:29092, localhost:39092
   schema-registry-url-key: schema.registry.url
   schema-registry-url: http://localhost:8081
-  topic-name: random-words-topic
+  topic-name: random-temp-topic
   topic-names-to-create:
-    - random-words-topic
+    - random-temp-topic
 
 kafka-consumer-config:
   key-deserializer: org.apache.kafka.common.serialization.LongDeserializer

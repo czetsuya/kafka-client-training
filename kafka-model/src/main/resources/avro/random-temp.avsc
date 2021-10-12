@@ -1,0 +1,35 @@
+{
+  "namespace": "com.czetsuyatech.kafka.avro.model",
+  "type": "record",
+  "name": "RandomTempAvroModel",
+  "fields": [
+    {
+      "name": "deviceId",
+      "type": "long"
+    },
+    {
+      "name": "id",
+      "type": "long"
+    },
+    {
+      "name": "temp",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 4,
+        "scale": 1
+      }
+    },
+    {
+      "name": "createdAt",
+      "type": [
+        "null",
+        "long"
+      ],
+      "logicalType": [
+        "null",
+        "date"
+      ]
+    }
+  ]
+}

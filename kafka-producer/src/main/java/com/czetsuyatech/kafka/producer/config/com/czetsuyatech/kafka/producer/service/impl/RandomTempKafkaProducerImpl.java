@@ -1,6 +1,6 @@
 package com.czetsuyatech.kafka.producer.config.com.czetsuyatech.kafka.producer.service.impl;
 
-import com.czetsuyatech.kafka.avro.model.RandomWordAvroModel;
+import com.czetsuyatech.kafka.avro.model.RandomTempAvroModel;
 import com.czetsuyatech.kafka.producer.config.com.czetsuyatech.kafka.producer.service.KafkaProducer;
 import javax.annotation.PreDestroy;
 import org.apache.kafka.clients.producer.RecordMetadata;
@@ -13,21 +13,21 @@ import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 
 @Service
-public class RandomWordKafkaProducerImpl implements KafkaProducer<Long, RandomWordAvroModel> {
+public class RandomTempKafkaProducerImpl implements KafkaProducer<Long, RandomTempAvroModel> {
 
-  private static final Logger LOG = LoggerFactory.getLogger(RandomWordKafkaProducerImpl.class);
+  private static final Logger LOG = LoggerFactory.getLogger(RandomTempKafkaProducerImpl.class);
 
-  private KafkaTemplate<Long, RandomWordAvroModel> kafkaTemplate;
+  private KafkaTemplate<Long, RandomTempAvroModel> kafkaTemplate;
 
-  public RandomWordKafkaProducerImpl(KafkaTemplate<Long, RandomWordAvroModel> template) {
+  public RandomTempKafkaProducerImpl(KafkaTemplate<Long, RandomTempAvroModel> template) {
     this.kafkaTemplate = template;
   }
 
   @Override
-  public void send(String topicName, Long key, RandomWordAvroModel message) {
+  public void send(String topicName, Long key, RandomTempAvroModel message) {
 
     LOG.info("Sending message='{}' to topic='{}'", message, topicName);
-    ListenableFuture<SendResult<Long, RandomWordAvroModel>> kafkaResultFuture =
+    ListenableFuture<SendResult<Long, RandomTempAvroModel>> kafkaResultFuture =
         kafkaTemplate.send(topicName, key, message);
     addCallback(topicName, message, kafkaResultFuture);
   }
@@ -41,8 +41,8 @@ public class RandomWordKafkaProducerImpl implements KafkaProducer<Long, RandomWo
     }
   }
 
-  private void addCallback(String topicName, RandomWordAvroModel message,
-      ListenableFuture<SendResult<Long, RandomWordAvroModel>> kafkaResultFuture) {
+  private void addCallback(String topicName, RandomTempAvroModel message,
+      ListenableFuture<SendResult<Long, RandomTempAvroModel>> kafkaResultFuture) {
 
     kafkaResultFuture.addCallback(new ListenableFutureCallback<>() {
 
@@ -52,7 +52,7 @@ public class RandomWordKafkaProducerImpl implements KafkaProducer<Long, RandomWo
       }
 
       @Override
-      public void onSuccess(SendResult<Long, RandomWordAvroModel> result) {
+      public void onSuccess(SendResult<Long, RandomTempAvroModel> result) {
 
         RecordMetadata metadata = result.getRecordMetadata();
         LOG.debug("Received new metadata. Topic: {}; Partition {}; Offset {}; Timestamp {}, at time {}",

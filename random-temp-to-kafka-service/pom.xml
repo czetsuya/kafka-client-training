@@ -9,7 +9,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>random-words-to-kafka-service</artifactId>
+  <artifactId>random-temp-to-kafka-service</artifactId>
 
   <dependencies>
     <dependency>

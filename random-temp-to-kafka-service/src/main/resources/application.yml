@@ -1,15 +1,15 @@
 log:
-  app-name: random-words-to-kafka-service
+  app-name: random-temp-to-kafka-service
 
 server:
   port: 8181
 
-random-words-to-kafka-service:
-  random-words:
-    - Java
-    - Microservices
-    - Kafka
-    - Spring
+random-temp-to-kafka-service:
+  random-temps:
+    - 36.5
+    - 37.0
+    - 34.7
+    - 38.0
   welcome-message: Hello Kafka!
   mock-sleep-ms: 10000
 
@@ -24,9 +24,9 @@ kafka-config:
   bootstrap-servers: localhost:19092, localhost:29092, localhost:39092
   schema-registry-url-key: schema.registry.url
   schema-registry-url: http://localhost:8081
-  topic-name: random-words-topic
+  topic-name: random-temp-topic
   topic-names-to-create:
-    - random-words-topic
+    - random-temp-topic
   num-of-partitions: 3
   replication-factor: 3
 
