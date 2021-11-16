@@ -5,6 +5,10 @@ This project demonstrates producing and consuming kafka messages using Apache Av
 It generates a random temperature every given time that simulates reading the value from an IOT device.
 The value is then written on a Kafka topic and read by another service and written on the console.
 
+## Architecture Diagram
+
+![Architecture Diagram](./docs/Architecture Diagram.png)
+
 ## Requirements
 - Java 11
 - IntelliJ/Eclipse/Visual Studio Code (optional)
