@@ -7,7 +7,7 @@ The value is then written on a Kafka topic and read by another service and writt
 
 ## Architecture Diagram
 
-![Architecture Diagram](./docs/Architecture Diagram.png)
+![Architecture Diagram](docs/Architecture_Diagram.png)
 
 ## Requirements
 - Java 11
