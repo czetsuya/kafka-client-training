@@ -14,6 +14,14 @@ The value is then written on a Kafka topic and read by another service and writt
 
 This application depends on a Kafka cluster configured in the docker compose file.
 
+Make sure to replace the mounted volume with valid paths:
+
+```shell
+volumes:
+  - /Users/czetsuya/Documents/dev/volumes/zookeeper/log/version-2/:/var/lib/zookeeper/log/version-2
+  - /Users/czetsuya/Documents/dev/volumes/zookeeper/data/version-2/:/var/lib/zookeeper/data/version-2
+```
+
 ```shell
 docker-compose -f common.yml -f kafka_cluster.yml up
 ```
