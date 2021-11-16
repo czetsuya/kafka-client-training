@@ -25,3 +25,7 @@ You can import all the projects in IntelliJ and create a Run Configuration for t
 - kafka-to-console-service
 
 Or you can build and run the projects in the terminal using the maven command.
+
+## Kafka GUI
+
+For viewing the Kafka topic, you may download and use [KafkaTool](https://www.kafkatool.com/download.html).
