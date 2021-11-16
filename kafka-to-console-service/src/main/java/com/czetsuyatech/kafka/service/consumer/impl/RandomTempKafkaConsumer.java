@@ -42,11 +42,11 @@ public class RandomTempKafkaConsumer implements KafkaConsumer<Long, RandomTempAv
 
     kafkaAdminClient.checkTopicsCreated();
     LOG.info("Topics with name {} is ready for operations!", kafkaConfigData.getTopicNamesToCreate().toArray());
-    kafkaListenerEndpointRegistry.getListenerContainer("randomWordsTopicListener").start();
+    kafkaListenerEndpointRegistry.getListenerContainer("randomTempTopicListener").start();
   }
 
   @Override
-  @KafkaListener(id = "randomWordsTopicListener", topics = "${kafka-config.topic-name}")
+  @KafkaListener(id = "randomTempTopicListener", topics = "${kafka-config.topic-name}")
   public void receive(@Payload List<RandomTempAvroModel> messages,
       @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) List<Long> keys,
       @Header(KafkaHeaders.RECEIVED_PARTITION_ID) List<Integer> partitions,

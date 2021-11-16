@@ -15,25 +15,8 @@ services:
     networks:
       - ${GLOBAL_NETWORK:-kafka}
     volumes:
-      - /Users/czetsuya/Documents/dev/volumes/zookeeper/log/version-2/:/var/lib/zookeeper/log/version-2
-      - /Users/czetsuya/Documents/dev/volumes/zookeeper/data/version-2/:/var/lib/zookeeper/data/version-2
-  schema-registry:
-    image: confluentinc/cp-schema-registry:${KAFKA_VERSION}
-    hostname: schema-registry
-    depends_on:
-      - zookeeper
-      - kafka-broker-1
-      - kafka-broker-2
-      - kafka-broker-3
-    ports:
-      - "8081:8081"
-    environment:
-      SCHEMA_REGISTRY_HOST_NAME: schema-registry
-      SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: 'zookeeper:2181'
-      SCHEMA_REGISTRY_LISTENERS: http://schema-registry:8081
-      SCHEMA_REGISTRY_DEBUG: 'true'
-    networks:
-      - ${GLOBAL_NETWORK:-kafka}
+      - ../volumes/zookeeper/log/version-2/:/var/lib/zookeeper/log/version-2
+      - ../volumes/zookeeper/data/version-2/:/var/lib/zookeeper/data/version-2
   kafka-broker-1:
     image: confluentinc/cp-kafka:${KAFKA_VERSION}
     hostname: kafka-broker-1
@@ -80,5 +63,23 @@ services:
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,LISTENER_LOCAL:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_COMPRESSION_TYPE: producer
+    networks:
+      - ${GLOBAL_NETWORK:-kafka}
+  schema-registry:
+    image: confluentinc/cp-schema-registry:${KAFKA_VERSION}
+    hostname: schema-registry
+    depends_on:
+      - zookeeper
+      - kafka-broker-1
+      - kafka-broker-2
+      - kafka-broker-3
+    ports:
+      - "8081:8081"
+    environment:
+      SCHEMA_REGISTRY_HOST_NAME: schema-registry
+      SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: 'zookeeper:2181'
+      SCHEMA_REGISTRY_LISTENERS: http://schema-registry:8081
+      SCHEMA_REGISTRY_DEBUG: 'true'
+      SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: PLAINTEXT://kafka-broker-1:9092
     networks:
       - ${GLOBAL_NETWORK:-kafka}
