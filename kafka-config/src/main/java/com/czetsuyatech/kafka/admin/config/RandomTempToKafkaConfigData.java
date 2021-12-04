@@ -12,9 +12,5 @@ import org.springframework.context.annotation.Configuration;
 public class RandomTempToKafkaConfigData {
 
   private List<BigDecimal> randomTemps;
-  private String welcomeMessage;
-  private Boolean enableMockTweets;
   private Long mockSleepMs;
-  private Integer mockMinTweetLength;
-  private Integer mockMaxTweetLength;
 }
