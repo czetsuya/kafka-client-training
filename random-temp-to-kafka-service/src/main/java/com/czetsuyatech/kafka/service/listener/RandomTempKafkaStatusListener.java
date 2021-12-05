@@ -27,10 +27,10 @@ public class RandomTempKafkaStatusListener {
     this.randomTempToAvroTransformer = transformer;
   }
 
-  public void onStatus(TempDto wordDto) {
+  public void onStatus(TempDto tempDto) {
 
-    LOG.info("Received temp {} sending to kafka topic {}", wordDto.getTemp(), kafkaConfigData.getTopicName());
-    RandomTempAvroModel avroModel = randomTempToAvroTransformer.getRandomAvroModelFromDto(wordDto);
+    LOG.info("Received temp {} sending to kafka topic {}", tempDto.getTemp(), kafkaConfigData.getTopicName());
+    RandomTempAvroModel avroModel = randomTempToAvroTransformer.getRandomAvroModelFromDto(tempDto);
     kafkaProducer.send(kafkaConfigData.getTopicName(), avroModel.getId(), avroModel);
   }
 }
