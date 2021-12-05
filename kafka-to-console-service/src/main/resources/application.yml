@@ -12,7 +12,7 @@ kafka-config:
 kafka-consumer-config:
   key-deserializer: org.apache.kafka.common.serialization.LongDeserializer
   value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
-  consumer-group-id: random-words-topic-consumer
+  consumer-group-id: random-words-topic-consumer-group-1
   auto-offset-reset: earliest
   specific-avro-reader-key: specific.avro.reader
   specific-avro-reader: true

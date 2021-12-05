@@ -46,20 +46,21 @@ public class RandomTempKafkaConsumer implements KafkaConsumer<Long, RandomTempAv
   }
 
   @Override
-  @KafkaListener(id = "randomTempTopicListener", topics = "${kafka-config.topic-name}")
+  @KafkaListener(id = "randomTempTopicListener", topics = "${kafka-config.topic-name}", groupId = "${kafka-consumer"
+      + "-config.consumer-group-id}")
   public void receive(@Payload List<RandomTempAvroModel> messages,
       @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) List<Long> keys,
       @Header(KafkaHeaders.RECEIVED_PARTITION_ID) List<Integer> partitions,
       @Header(KafkaHeaders.OFFSET) List<Long> offsets) {
 
-    LOG.info("{} number of message received with keys {}, partitions {} and offsets {}, Thread id {}",
+    LOG.info("[v1] {} number of message received with keys {}, partitions {} and offsets {}, Thread id {}",
         messages.size(),
         keys.toString(),
         partitions.toString(),
         offsets.toString(),
         Thread.currentThread().getId());
 
-    LOG.info("messages received={}", transformer.getTempModels(messages));
+    LOG.info("[v1] messages received={}", transformer.getTempModels(messages));
   }
 }
 

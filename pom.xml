@@ -24,6 +24,7 @@
     <module>kafka-admin</module>
     <module>kafka-model</module>
     <module>kafka-to-console-service</module>
+    <module>kafka-to-console-service-v2</module>
   </modules>
 
   <properties>

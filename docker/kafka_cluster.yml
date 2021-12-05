@@ -57,6 +57,7 @@ services:
     depends_on:
       - zookeeper
     environment:
+      KAFKA_NUM_PARTITIONS: 2
       KAFKA_BROKER_ID: 3
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-broker-3:9092,LISTENER_LOCAL://localhost:39092

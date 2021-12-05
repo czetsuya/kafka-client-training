@@ -1,0 +1,40 @@
+server:
+  port: 8183
+
+kafka-config:
+  topic-name: random-temp-topic
+
+retry-config:
+  initial-interval-ms: 1000
+  max-interval-ms: 10000
+  multiplier: 2.0
+  maxAttempts: 3
+  sleep-time-ms: 2000
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:19092, localhost:29092, localhost:39092
+    consumer:
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+      max-poll-records: 10
+      key-deserializer: org.apache.kafka.common.serialization.LongDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: com.czetsuyatech
+      group-id: random-words-topic-consumer-group-2
+      client-id: random-words-topic-consumer-client-2
+    listener:
+      ack-mode: record
+      concurrency: 1
+      missing-topics-fatal: false
+    properties:
+      schema:
+        registry:
+          url: http://localhost:8081
+      specific:
+        avro:
+          reader: true

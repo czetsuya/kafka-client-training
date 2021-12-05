@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-  <springProperty name="log.app-name" source="random-temp-to-kafka-service" />
+  <springProperty name="log.app-name" source="kafka-to-console-service-v2" />
 
-  <property name="DEV_HOME" value="./logs/random-temp-to-kafka-service"/>
+  <property name="DEV_HOME" value="./logs/kafka-to-console-service-v2"/>
   <property name="APP_NAME" value="${log.app-name}"/>
 
   <include resource="logback-common.xml"/>
