@@ -36,7 +36,7 @@ docker-compose -f common.yml -f kafka_cluster.yml up
 
 ## Running the Demo Application
 
-You can import all the projects in IntelliJ and create a Run Configuration for these 2 projects:
+You can import all the projects in IntelliJ and create a Run Configuration for these 3 modules:
 - random-temp-to-kafka-service
 - kafka-to-console-service-v1
 - kafka-to-console-service-v2
