@@ -1,0 +1,68 @@
+logging:
+  level:
+    com.czetsuyatech: error
+    org.apache.kafka: error
+
+server:
+  port: 8183
+
+kafka-config:
+  topic-name: random-temp-topic
+
+retry-config:
+  initial-interval-ms: 1000
+  max-interval-ms: 10000
+  multiplier: 2.0
+  maxAttempts: 3
+  sleep-time-ms: 2000
+
+spring:
+  kafka:
+    bootstrap-servers: ${spring.embedded.kafka.brokers}
+    producer:
+      value-serializer: com.czetsuyatech.kafka.service.consumer.impl.MockKafkaAvroSerializer
+      key-serializer: org.apache.kafka.common.serialization.LongSerializer
+      compression-type: snappy
+      acks: all
+      batch-size: 16384
+      properties:
+        schema:
+          registry:
+            url: http://localhost:8081
+        auto:
+          register:
+            schemas: true
+        linger:
+          ms: 5
+        request:
+          timeout:
+            ms: 60000
+    consumer:
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+      max-poll-records: 10
+      key-deserializer: org.apache.kafka.common.serialization.LongDeserializer
+      value-deserializer: com.czetsuyatech.kafka.service.consumer.impl.MockKafkaAvroDeserializer
+      properties:
+        schema:
+          registry:
+            url: http://localhost:8081
+        specific:
+          avro:
+            reader: true
+      group-id: random-words-topic-consumer-group-2
+      client-id: random-words-topic-consumer-client-2
+    listener:
+      ack-mode: record
+      concurrency: 1
+      missing-topics-fatal: false
+    properties:
+
+kafka-producer-config:
+  compression-type: snappy
+  acks: all
+  batch-size: 16384
+  batch-size-boost-factor: 100
+  linger-ms: 5
+  request-timeout-ms: 60000
+  retry-count: 5

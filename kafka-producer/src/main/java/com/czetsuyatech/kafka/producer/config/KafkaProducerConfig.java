@@ -2,6 +2,7 @@ package com.czetsuyatech.kafka.producer.config;
 
 import com.czetsuyatech.kafka.admin.config.KafkaConfigData;
 import com.czetsuyatech.kafka.admin.config.KafkaProducerConfigData;
+import io.confluent.kafka.serializers.KafkaAvroDeserializerConfig;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,7 +31,7 @@ public class KafkaProducerConfig<K extends Serializable, V extends SpecificRecor
 
     Map<String, Object> props = new HashMap<>();
     props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaConfigData.getBootstrapServers());
-    props.put(kafkaConfigData.getSchemaRegistryUrlKey(), kafkaConfigData.getSchemaRegistryUrl());
+    props.put(KafkaAvroDeserializerConfig.SCHEMA_REGISTRY_URL_CONFIG, kafkaConfigData.getSchemaRegistryUrl());
     props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, kafkaProducerConfigData.getKeySerializerClass());
     props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, kafkaProducerConfigData.getValueSerializerClass());
     props.put(ProducerConfig.BATCH_SIZE_CONFIG, kafkaProducerConfigData.getBatchSize() *

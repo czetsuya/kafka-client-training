@@ -5,6 +5,7 @@ import com.czetsuyatech.kafka.service.consumer.KafkaConsumer;
 import com.czetsuyatech.kafka.service.transformer.AvroToDtoTransformer;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -15,10 +16,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class RandomTempKafkaConsumer implements KafkaConsumer<Long, RandomTempAvroModel> {
 
-  private static final Logger LOG = LoggerFactory.getLogger(RandomTempKafkaConsumer.class);
   private final AvroToDtoTransformer transformer;
+  public static RandomTempAvroModel lastAvroModel;
 
   @Override
   @KafkaListener(id = "randomTempTopicListener", topics = "${kafka-config.topic-name}",
@@ -28,14 +30,16 @@ public class RandomTempKafkaConsumer implements KafkaConsumer<Long, RandomTempAv
       @Header(KafkaHeaders.RECEIVED_PARTITION_ID) List<Integer> partitions,
       @Header(KafkaHeaders.OFFSET) List<Long> offsets) {
 
-    LOG.info("[v2] {} number of message received with keys {}, partitions {} and offsets {}, Thread id {}",
+    log.info("[v2] {} number of message received with keys {}, partitions {} and offsets {}, Thread id {}",
         messages.size(),
         keys.toString(),
         partitions.toString(),
         offsets.toString(),
         Thread.currentThread().getId());
 
-    LOG.info("[v2] messages received={}", transformer.getTempModels(messages));
+    lastAvroModel = messages.get(messages.size() - 1);
+
+    log.debug("[v2] messages received={}", transformer.getTempModels(messages));
   }
 }
 

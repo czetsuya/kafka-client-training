@@ -55,6 +55,8 @@ public class KafkaErrorHandler implements ErrorHandler {
 
     log.error("Error in process with exception {} and the records are {}", e, records);
 
+    e.printStackTrace();
+
     if (e instanceof SerializationException) {
       seekSerializeException(e, consumer);
     }
